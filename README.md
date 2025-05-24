@@ -1,6 +1,3 @@
-# CMSC302-IMRAD
-Algorithm Analysis of Huffman Trees and Codes
-
 # Huffman Coding Compression & Decompression
 
 This project implements file compression and decompression using Huffman coding in Python. It includes benchmarking tools to measure the efficiency of the compression algorithm.
@@ -13,6 +10,7 @@ This project implements file compression and decompression using Huffman coding 
 ## Files
 - `huffmantrees.py`: Main script for compressing and decompressing files using Huffman coding.
 - `benchmark_huffman.py`: Script to benchmark the performance of the Huffman coding implementation.
+- `run_benchmark.bat`: Batch file to run the benchmark script easily on Windows.
 - `benchmark_results.txt`: Output file containing benchmark results.
 - Example input files: `small.txt`, `medium.txt`, `large.txt`, `superlarge.txt`
 
@@ -29,9 +27,9 @@ python huffmantrees.py decompress <input_file.huff> <output_file.txt>
 ```
 
 ### Benchmarking
-To run benchmarks on the provided example files:
+To run benchmarks on the provided example files, use the batch file:
 ```
-python benchmark_huffman.py
+run_benchmark.bat
 ```
 Results will be saved in `benchmark_results.txt`.
 
