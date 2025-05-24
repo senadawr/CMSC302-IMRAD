@@ -67,7 +67,6 @@ def compress(input_path, output_path):
     encoded_text = encode_text(text, codebook)
     padded_encoded_text = pad_encoded_text(encoded_text)
     byte_array = get_byte_array(padded_encoded_text)
-    # Save both the codebook and the compressed data
     with open(output_path, 'wb') as output:
         pickle.dump((codebook, byte_array), output)
     end_time = time.time()
@@ -84,18 +83,14 @@ def decompress(input_path, output_path):
     start_time = time.time()
     with open(input_path, 'rb') as file:
         codebook, byte_array = pickle.load(file)
-    # Invert the codebook to map codes to characters
     inverse_codebook = {v: k for k, v in codebook.items()}
-    # Convert byte array back to bit string
     bit_string = ''
     for byte in byte_array:
         bit_string += f"{byte:08b}"
-    # Remove padding
     padded_info = bit_string[:8]
     extra_padding = int(padded_info, 2)
     bit_string = bit_string[8:]
     encoded_text = bit_string[:-extra_padding] if extra_padding > 0 else bit_string
-    # Decode the text
     current_code = ''
     decoded_text = ''
     for bit in encoded_text:
