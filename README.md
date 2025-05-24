@@ -34,7 +34,7 @@ run_benchmark.bat
 Results will be saved in `benchmark_results.txt`.
 
 ## Requirements
-- Python 3.x
+- Python 3.x (Recommended: Python 3.12+)
 
 ## How It Works
 - The compressor reads the input file, builds a Huffman tree, and encodes the text.
